@@ -23,6 +23,7 @@ Phase 2 of my systems engineering notes: stack, heap, RAII, smart pointers, owne
 | 4 | [RAII](04-raii/) |
 | 5 | [Ownership and resource management](05-ownership-resource-management/) |
 | 6 | [`std::unique_ptr` and exclusive ownership](06-unique-ptr/) |
+| 7 | [`std::shared_ptr` and `std::weak_ptr`](07-shared-ptr-weak-ptr/) |
 
 ## Diagrams
 

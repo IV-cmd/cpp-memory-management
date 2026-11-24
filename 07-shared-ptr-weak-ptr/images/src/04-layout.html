@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">What a <code>shared_ptr</code> actually holds</div>
+<div style="display:flex;align-items:center;gap:16px"><div style="flex:1"><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>shared_ptr&lt;int&gt;</code></div><div class="small">16 bytes: two pointers</div></div></div></div><div style="font-size:30px;color:#7c3aed">→</div><div style="flex:1"><div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">the <code>int</code></div><div class="small"><code>100</code></div></div></div><div style="height:8px"></div><div class="row" style=""><div class="cell orange" style="flex:1;min-width:0px"><div class="big">control block</div><div class="small">strong count, weak count, deleter</div></div></div></div></div></div>
+<div class="caption">Every copy points at the same control block. <code>use_count()</code> reads the strong count from there.</div>
+</div>

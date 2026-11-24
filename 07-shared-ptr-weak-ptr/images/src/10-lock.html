@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Using a <code>weak_ptr</code>: <code>lock()</code> first</div>
+<div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>if (auto strong = weak.lock())</code></div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">object alive</div><div class="small"><code>strong</code> is a temporary owner: count +1 inside the block</div></div><div class="cell red" style="flex:1;min-width:0px"><div class="big">object already destroyed</div><div class="small"><code>lock()</code> returns an empty <code>shared_ptr</code></div></div></div>
+<div class="caption">Holding <code>strong</code> means the object can't be destroyed halfway through the <code>if</code> block. <code>weak.expired()</code> only tells you about the past, by the next line it may be wrong.</div>
+</div>

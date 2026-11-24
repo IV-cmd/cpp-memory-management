@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">A reference cycle</div>
+<div style="display:flex;align-items:center;gap:16px"><div style="flex:1"><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>StorageNode</code></div><div class="small"><code>shared_ptr&lt;MonitoringService&gt; monitor</code></div></div></div></div><div style="font-size:30px;color:#7c3aed">⇄</div><div style="flex:1"><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>MonitoringService</code></div><div class="small"><code>shared_ptr&lt;StorageNode&gt; node</code></div></div></div></div></div>
+<div class="caption">Each object owns the other. When the local <code>node</code> and <code>monitor</code> go away, both counts drop from 2 to 1, never to 0.</div>
+</div>

@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Three components, one connection</div>
+<div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big">request handler</div><div class="small">finishes first</div></div><div class="cell blue" style="flex:1;min-width:0px"><div class="big">monitoring service</div></div><div class="cell blue" style="flex:1;min-width:0px"><div class="big">health checker</div><div class="small">still running</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big"><code>Connection</code></div><div class="small">must stay alive while anyone still needs it</div></div></div>
+<div class="caption">No single component knows when the others are done, so none of them can be "the" owner.</div>
+</div>

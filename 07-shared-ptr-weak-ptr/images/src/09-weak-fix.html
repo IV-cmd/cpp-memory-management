@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Breaking the cycle with <code>weak_ptr</code></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="flex:1"><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>StorageNode</code></div><div class="small">owns the monitor</div></div></div></div><div style="font-size:30px;color:#7c3aed">⇄</div><div style="flex:1"><div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>MonitoringService</code></div><div class="small"><code>weak_ptr&lt;StorageNode&gt;</code>: observes</div></div></div></div></div>
+<div class="caption">Ownership now goes one way. <code>weak_ptr</code> doesn't increase the strong count, so the node can reach 0 and be destroyed, which then releases the monitor.</div>
+</div>

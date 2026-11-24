@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">What <code>shared_ptr</code> makes thread-safe, and what it doesn't</div>
+<table class="t"><tr><th></th><th>Thread-safe?</th></tr><tr><td>two threads copying / destroying their own <code>shared_ptr</code> copies</td><td><span class="pill ok">yes, the count is atomic</span></td></tr><tr><td>the last owner destroying the object exactly once</td><td><span class="pill ok">yes</span></td></tr><tr><td>two threads reading and writing the pointed-to object</td><td><span class="pill">no, needs a mutex (Phase 3)</span></td></tr><tr><td>two threads assigning to the same <code>shared_ptr</code> variable</td><td><span class="pill">no</span></td></tr></table>
+
+</div>

@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>unique_ptr</code> vs <code>shared_ptr</code></div>
+<table class="t"><tr><th></th><th><code>unique_ptr</code></th><th><code>shared_ptr</code></th></tr><tr><td>ownership</td><td>exclusive</td><td>shared</td></tr><tr><td>copying</td><td>not allowed</td><td>allowed, count +1</td></tr><tr><td>moving</td><td>allowed</td><td>allowed, count unchanged</td></tr><tr><td>object destroyed</td><td>when the owner is</td><td>when the last owner is</td></tr><tr><td><code>sizeof</code> (my run)</td><td>8</td><td>16</td></tr><tr><td>extra allocation</td><td>none</td><td>a control block (merged by <code>make_shared</code>)</td></tr><tr><td>copy cost</td><td>n/a</td><td>an atomic increment and decrement</td></tr></table>
+<div class="caption">I default to <code>unique_ptr</code>. With <code>shared_ptr</code> I have to reason about every owner to know when something dies.</div>
+</div>

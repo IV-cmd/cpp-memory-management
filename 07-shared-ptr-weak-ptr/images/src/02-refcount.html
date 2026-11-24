@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Reference count, step by step</div>
+<table class="t"><tr><th>Code</th><th>Reference count</th><th>Object</th></tr><tr><td><code>auto first = std::make_shared&lt;int&gt;(100);</code></td><td>1</td><td><span class="pill ok">alive</span></td></tr><tr><td><code>auto second = first;</code></td><td>2</td><td><span class="pill ok">alive</span></td></tr><tr><td><code>auto third = second;</code></td><td>3</td><td><span class="pill ok">alive</span></td></tr><tr><td><code>first.reset();</code></td><td>2</td><td><span class="pill ok">alive</span></td></tr><tr><td><code>second.reset();</code></td><td>1</td><td><span class="pill ok">alive</span></td></tr><tr><td><code>third.reset();</code></td><td>0</td><td><span class="pill">destroyed</span></td></tr></table>
+<div class="caption">From <code>use_count.cpp</code>. <code>reset()</code> gives up one owner's share; only the last one destroys the object.</div>
+</div>

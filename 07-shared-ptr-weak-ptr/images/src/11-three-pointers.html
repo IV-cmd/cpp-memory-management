@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">The three smart pointers together</div>
+<table class="t"><tr><th>Pointer</th><th>Ownership</th><th>Object destroyed when</th><th>Main use</th></tr><tr><td><code>unique_ptr</code></td><td>one owner</td><td>the owner goes away</td><td>default for owned dynamic objects</td></tr><tr><td><code>shared_ptr</code></td><td>several owners</td><td>the last owner goes away</td><td>lifetime genuinely shared</td></tr><tr><td><code>weak_ptr</code></td><td>none</td><td>(it doesn't decide)</td><td>observe a shared object; break cycles</td></tr></table>
+
+</div>
