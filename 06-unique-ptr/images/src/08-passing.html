@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">How should a function take it?</div>
+<table class="t"><tr><th>Parameter</th><th>Meaning</th><th>Caller after the call</th></tr><tr><td><code>std::unique_ptr&lt;T&gt;</code></td><td>"give it to me", ownership transfer</td><td>empty; must <code>std::move</code> to call</td></tr><tr><td><code>const std::unique_ptr&lt;T&gt;&amp;</code></td><td>"let me look at the handle" (is it empty?)</td><td>still the owner</td></tr><tr><td><code>T&amp;</code>, <code>const T&amp;</code>, <code>T*</code></td><td>"let me use the object"</td><td>still the owner</td></tr><tr><td><code>std::span&lt;const T&gt;</code></td><td>"let me read the array"</td><td>still the owner</td></tr></table>
+<div class="caption">Most functions only need the object. They shouldn't care whether it lives in a unique_ptr, a vector or on the stack.</div>
+</div>

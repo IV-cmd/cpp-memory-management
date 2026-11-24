@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Why <code>auto second = first;</code> doesn't compile</div>
+<div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>first</code></div><div class="small">thinks it owns</div></div><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>second</code></div><div class="small">would also think it owns</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">same <code>int</code></div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell red" style="flex:1;min-width:0px"><div class="big">both destructors <code>delete</code> it</div><div class="small">double free</div></div></div>
+<div class="caption">The copy constructor is deleted, so the compiler stops it: <code>error: use of deleted function ‘std::unique_ptr&lt;...&gt;::unique_ptr(const std::unique_ptr&lt;...&gt;&amp;)’</code>.</div>
+</div>

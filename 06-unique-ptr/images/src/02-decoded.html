@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>std::unique_ptr&lt;int&gt; value = std::make_unique&lt;int&gt;(100);</code></div>
+<table class="t"><tr><th>Piece</th><th>What it means</th></tr><tr><td><code>std::unique_ptr&lt;int&gt;</code></td><td>a smart pointer type that owns one <code>int</code></td></tr><tr><td><code>value</code></td><td>a local object, automatic storage, on the stack</td></tr><tr><td><code>std::make_unique&lt;int&gt;(100)</code></td><td>allocates an <code>int</code>, initialises it to 100, returns its owner</td></tr><tr><td><code>*value</code></td><td>the <code>int</code> itself, like dereferencing a raw pointer</td></tr><tr><td>end of scope</td><td><code>value</code>'s destructor calls <code>delete</code></td></tr></table>
+<div class="caption">A smart pointer is an ordinary class object that holds a pointer and frees it in its destructor: RAII from Module 4.</div>
+</div>

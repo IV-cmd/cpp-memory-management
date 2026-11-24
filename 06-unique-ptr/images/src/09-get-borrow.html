@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>.get()</code> hands out access, not ownership</div>
+<div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>buffer</code></div><div class="small"><code>unique_ptr&lt;int[]&gt;</code>: the owner</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">1,000 ints</div></div></div><div class="arrow">↑ borrowed through <code>.get()</code></div><div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>checksumBuffer</code></div><div class="small"><code>int*</code>, reads only</div></div><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>writerBuffer</code></div><div class="small"><code>int*</code>, reads only</div></div></div>
+<div class="caption">Neither raw pointer may <code>delete[]</code>. With <code>-DSHOW_BUG</code>, <code>checksumBuffer</code> does, and AddressSanitizer reports a double-free when <code>buffer</code> is destroyed.</div>
+</div>

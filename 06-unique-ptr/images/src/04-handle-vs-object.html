@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">The handle is automatic, the object is dynamic</div>
+<div style="display:flex;align-items:center;gap:16px"><div style="flex:1"><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>buffer</code></div><div class="small">unique_ptr: 8 bytes on the stack</div></div></div></div><div style="font-size:30px;color:#7c3aed">→</div><div style="flex:1"><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">1,000 ints</div><div class="small">4,000 bytes on the heap</div></div></div></div></div>
+<div class="caption">The stack object's lifetime ends at <code>}</code>. Its destructor is what ends the heap array's lifetime, so the two now end together.</div>
+</div>

@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>writeToDisk(std::move(buffer))</code>: where the Buffer dies</div>
+<table class="t"><tr><th>Output</th><th>What happened</th></tr><tr><td><code>+ Buffer 1</code></td><td><code>make_unique&lt;Buffer&gt;(1)</code> in <code>main</code></td></tr><tr><td><code>writing buffer 1</code></td><td><code>writeToDisk</code> owns it now, through its parameter</td></tr><tr><td><code>- Buffer 1</code></td><td>the parameter is destroyed when <code>writeToDisk</code> returns</td></tr><tr><td><code>back in main, buffer is empty</code></td><td><code>main</code>'s <code>buffer</code> was moved from</td></tr></table>
+<div class="caption">A function that takes <code>unique_ptr</code> by value is a "sink": calling it gives ownership away.</div>
+</div>

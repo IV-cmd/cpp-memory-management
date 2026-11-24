@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">The other member functions</div>
+<table class="t"><tr><th>Call</th><th>What happens to the object</th><th>Who owns it after</th></tr><tr><td><code>p.get()</code></td><td>nothing</td><td><code>p</code> (you just borrowed it)</td></tr><tr><td><code>p.reset()</code></td><td>destroyed now</td><td>nobody, <code>p</code> is empty</td></tr><tr><td><code>p.reset(q)</code></td><td>old one destroyed</td><td><code>p</code> owns the new one</td></tr><tr><td><code>p.release()</code></td><td>nothing</td><td>you do, as a raw pointer: you must free it</td></tr><tr><td><code>std::move(p)</code></td><td>nothing</td><td>whoever receives it</td></tr></table>
+<div class="caption"><code>release()</code> is the easy one to misuse: it does not free anything.</div>
+</div>

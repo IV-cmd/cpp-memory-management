@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Request handler → storage worker</div>
+<div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>requestHandler()</code></div><div class="small"><code>Buffer buffer = make_unique&lt;char[]&gt;(4096);</code></div></div></div><div class="arrow">↓ <code>storageWorker(std::move(buffer))</code></div><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>storageWorker(Buffer buffer)</code></div><div class="small">owns the 4096 bytes, writes them</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">worker returns</div><div class="small">buffer freed automatically</div></div></div>
+<div class="caption"><code>using Buffer = std::unique_ptr&lt;char[]&gt;;</code> Ownership is visible in every signature.</div>
+</div>
