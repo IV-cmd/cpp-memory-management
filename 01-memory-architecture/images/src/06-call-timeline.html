@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">The stack over time</div>
+<table class="t"><tr><th>Moment</th><th>Active frames (top = newest)</th></tr><tr><td><code>main()</code> starts</td><td>main</td></tr><tr><td><code>processRequest()</code> called</td><td>processRequest · main</td></tr><tr><td><code>writeFile()</code> called</td><td><b>writeFile</b> · processRequest · main</td></tr><tr><td><code>writeFile()</code> returns</td><td>processRequest · main</td></tr><tr><td><code>processRequest()</code> returns</td><td>main</td></tr></table>
+<div class="caption">Last in, first out. "Freeing" a frame is just moving the stack pointer back, which is why stack allocation is so cheap.</div>
+</div>

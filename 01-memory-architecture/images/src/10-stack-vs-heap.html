@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Stack vs heap</div>
+<table class="t"><tr><th></th><th>Stack</th><th>Heap</th></tr><tr><td>Typical use</td><td>function-local objects</td><td>objects sized or kept alive at runtime</td></tr><tr><td>Allocation</td><td>move the stack pointer</td><td>ask the allocator (<code>new</code>, <code>malloc</code>)</td></tr><tr><td>Lifetime</td><td>ends at the closing <code>}</code></td><td>until <code>delete</code> or an owner frees it</td></tr><tr><td>Size</td><td>small: 8 MiB here</td><td>limited by RAM and address space</td></tr><tr><td>Speed</td><td>very fast</td><td>slower: bookkeeping, possible syscalls</td></tr><tr><td>Typical bug</td><td>stack overflow, dangling pointer to a local</td><td>leak, use-after-free, double free, fragmentation</td></tr></table>
+
+</div>

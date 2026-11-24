@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">What C++ says vs what the machine does</div>
+<table class="t"><tr><th>The standard talks about…</th><th>…which on Linux usually means</th></tr><tr><td>automatic storage duration</td><td>a slot in a stack frame (or just a register)</td></tr><tr><td>static storage duration</td><td>data or bss</td></tr><tr><td>dynamic storage duration</td><td>heap memory from the allocator</td></tr><tr><td>thread storage duration</td><td>a per-thread block set up by the runtime</td></tr></table>
+<div class="caption">The C++ standard never says "stack" or "heap". It specifies storage durations and lifetimes. Module 2 is about those.</div>
+</div>

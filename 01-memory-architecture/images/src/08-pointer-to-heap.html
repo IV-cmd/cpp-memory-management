@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>char* buffer = new char[fileSize];</code></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="flex:1"><div class="label">Stack</div><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>buffer</code></div><div class="small"><code>char*</code> · 8 bytes · holds an address</div></div></div></div><div style="font-size:30px;color:#7c3aed">→</div><div style="flex:1"><div class="label">Heap</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">char[fileSize]</div><div class="small">fileSize bytes, dynamic storage</div></div></div></div></div>
+<div class="caption">Two separate things: a small pointer variable with automatic storage, and the array it points to, which lives until <code>delete[]</code>.</div>
+</div>

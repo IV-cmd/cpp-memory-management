@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Nested calls: each frame sits below its caller</div>
+<div class="tiny" style="text-align:center;color:#6b7280;font-size:12px">higher addresses</div><div class="row" style=""><div class="cell gray" style="flex:1;min-width:0px"><div class="big">main()</div><div class="small"><code>mainLocal</code> at <code>0x7ffe4fd0db44</code></div></div></div><div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big">processRequest()</div><div class="small"><code>requestId = 10</code> at <code>0x7ffe4fd0db24</code></div></div></div><div class="row" style=""><div class="cell orange" style="flex:1;min-width:0px"><div class="big">writeFile()</div><div class="small"><code>bufferSize = 4096</code> at <code>0x7ffe4fd0db04</code></div></div></div><div class="arrow">↓ stack grows toward lower addresses</div>
+<div class="caption">From <code>stack_frames.cpp</code>. Each call moved the stack 0x20 (32) bytes lower. On x86-64 Linux the stack grows down.</div>
+</div>

@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Phase 1 recap: a pointer doesn't allocate</div>
+<table class="t"><tr><th>Line</th><th>Object created</th><th>Where it typically lives</th></tr><tr><td><code>int x = 10;</code></td><td>an <code>int</code></td><td>stack</td></tr><tr><td><code>int* p = &amp;x;</code></td><td>a pointer (to x)</td><td>stack; points into the stack</td></tr><tr><td><code>int* q = new int(20);</code></td><td>a pointer <b>and</b> an <code>int</code></td><td>pointer on the stack, int on the heap</td></tr></table>
+<div class="caption">Only <code>new</code> creates the extra object. <code>p</code> just records where <code>x</code> already is.</div>
+</div>

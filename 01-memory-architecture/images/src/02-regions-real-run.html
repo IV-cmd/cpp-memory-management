@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Where each object in <code>regions.cpp</code> actually landed</div>
+<table class="t"><tr><th>Region</th><th>Declared as</th><th>Address in my run</th></tr><tr><td>text</td><td><code>void writeFile() {}</code></td><td><code>0x587a2d256589</code></td></tr><tr><td>data</td><td><code>int totalFiles = 100;</code></td><td><code>0x587a2d25c010</code></td></tr><tr><td>bss</td><td><code>int totalErrors;</code></td><td><code>0x587a2d25c154</code></td></tr><tr><td>heap</td><td><code>new int[1024]</code></td><td><code>0x587a31982eb0</code></td></tr><tr><td>stack</td><td><code>int fileSize = 4096;</code></td><td><code>0x7fff57542c34</code></td></tr></table>
+<div class="caption">Lowest to highest, the same order as the diagram. Text, data and bss sit inside the executable's own mapping; the heap is just above it; the stack is near the top of the 47-bit user address space.</div>
+</div>
