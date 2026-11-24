@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Memory is only one kind of resource</div>
+<table class="t"><tr><th>Resource</th><th>Acquire</th><th>Release</th><th>Standard owner?</th></tr><tr><td>heap memory</td><td><code>new</code></td><td><code>delete</code></td><td><span class="pill ok">vector, unique_ptr</span></td></tr><tr><td><code>FILE*</code></td><td><code>fopen</code></td><td><code>fclose</code></td><td><span class="pill warn">unique_ptr + deleter</span></td></tr><tr><td>file descriptor</td><td><code>open</code></td><td><code>close</code></td><td><span class="pill">write a wrapper</span></td></tr><tr><td>socket</td><td><code>socket</code></td><td><code>close</code></td><td><span class="pill">write a wrapper</span></td></tr><tr><td>mutex lock</td><td><code>lock</code></td><td><code>unlock</code></td><td><span class="pill ok">lock_guard</span></td></tr></table>
+<div class="caption">Where no standard type fits, I write one small class that owns it and gets all five right, so everything else can use the Rule of Zero.</div>
+</div>

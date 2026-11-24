@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Raw <code>int*</code> + destructor, nothing else written</div>
+<table class="t"><tr><th>Operation</th><th>What the compiler gives me</th><th>Result</th></tr><tr><td>destroy</td><td>my destructor</td><td><span class="pill ok">array freed</span></td></tr><tr><td>copy construct</td><td>memberwise copy</td><td><span class="pill">shallow copy, double free</span></td></tr><tr><td>copy assign</td><td>memberwise assign</td><td><span class="pill">old array leaked + double free</span></td></tr><tr><td>move</td><td>no move constructor (I declared a destructor)</td><td><span class="pill">falls back to the shallow copy</span></td></tr></table>
+<div class="caption">Declaring a destructor stops the compiler from generating move operations, so <code>std::move</code> quietly copies.</div>
+</div>

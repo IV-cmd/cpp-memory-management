@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">The empty destructor that turned moves into copies</div>
+<table class="t"><tr><th></th><th><code>ZeroVector b = std::move(a);</code></th><th><code>DtorOnly b = std::move(a);</code></th></tr><tr><td>what ran</td><td>generated move constructor</td><td>generated copy constructor</td></tr><tr><td><code>b</code> uses <code>a</code>'s buffer?</td><td><span class="pill ok">yes</span></td><td><span class="pill">no, new allocation</span></td></tr><tr><td><code>a.data.size()</code> afterwards</td><td>0</td><td>1000</td></tr></table>
+<div class="caption">Writing <code>~DtorOnly() {}</code> stops the compiler declaring a move constructor. Deleting that line, or adding <code>DtorOnly(DtorOnly&amp;&amp;) = default;</code>, brings the move back.</div>
+</div>

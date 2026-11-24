@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Phase 2 in one picture</div>
+<table class="t"><tr><th>Modules</th><th>Question</th><th>Answer I ended up with</th></tr><tr><td>1–2</td><td>where do objects live, and for how long?</td><td>stack, heap, static, thread storage</td></tr><tr><td>3</td><td>what goes wrong with <code>new</code> / <code>delete</code>?</td><td>leaks, dangling pointers, double frees</td></tr><tr><td>4</td><td>how is cleanup made automatic?</td><td>RAII: destructors release resources</td></tr><tr><td>5</td><td>who is responsible?</td><td>one owner; everyone else borrows</td></tr><tr><td>6–7</td><td>how do types say who owns it?</td><td><code>unique_ptr</code>, <code>shared_ptr</code>, <code>weak_ptr</code></td></tr><tr><td>8–9</td><td>what does copying or moving do to a resource?</td><td>deep copy vs transfer</td></tr><tr><td>10</td><td>how should classes be designed?</td><td>Rule of Zero, wrappers follow the Rule of Five</td></tr></table>
+<div class="caption">Next, Phase 3: what changes when several threads touch these objects at the same time.</div>
+</div>

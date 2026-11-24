@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>StorageBuffer</code> line by line</div>
+<table class="t"><tr><th>Code</th><th>What it gives me</th></tr><tr><td><code>explicit StorageBuffer(std::size_t size)</code></td><td><code>StorageBuffer b = 4096;</code> doesn't compile</td></tr><tr><td><code>: data(size)</code></td><td>the vector is built with <code>size</code> zeroed chars</td></tr><tr><td><code>data.at(index)</code></td><td>bounds checked: throws <code>std::out_of_range</code></td></tr><tr><td><code>char read(...) const</code></td><td>callable on a <code>const StorageBuffer&amp;</code></td></tr><tr><td>no destructor</td><td>the vector frees itself</td></tr><tr><td>no copy / move functions</td><td>generated ones copy / move the vector correctly</td></tr></table>
+
+</div>

@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">What the compiler generated (<code>special_members.cpp</code>)</div>
+<table class="t"><tr><th>Type</th><th>copy?</th><th>move?</th><th>nothrow move?</th><th>Verdict</th></tr><tr><td><code>RawOwner</code> (<code>int*</code> + destructor)</td><td>yes</td><td>yes</td><td>yes</td><td><span class="pill">copyable, but shallow</span></td></tr><tr><td><code>ZeroVector</code> (<code>vector</code>)</td><td>yes</td><td>yes</td><td>yes</td><td><span class="pill ok">Rule of Zero</span></td></tr><tr><td><code>ZeroUnique</code> (<code>unique_ptr</code>)</td><td>no</td><td>yes</td><td>yes</td><td><span class="pill ok">move-only, as intended</span></td></tr><tr><td><code>DtorOnly</code> (<code>vector</code> + empty destructor)</td><td>yes</td><td>yes</td><td>no</td><td><span class="pill warn">"move" is really a copy</span></td></tr></table>
+<div class="caption">The traits only say whether an expression compiles. <code>RawOwner</code> passes every check and still double-frees. <code>DtorOnly</code> reports move-constructible because <code>const DtorOnly&amp;</code> accepts an rvalue, so the copy constructor gets used.</div>
+</div>

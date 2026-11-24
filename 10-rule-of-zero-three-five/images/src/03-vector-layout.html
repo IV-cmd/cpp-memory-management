@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>std::vector&lt;int&gt; data(1000);</code></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="flex:1"><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big">vector object</div><div class="small">24 bytes: begin, end, capacity pointers</div></div></div></div><div style="font-size:30px;color:#7c3aed">→</div><div style="flex:1"><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">heap: 1000 <code>int</code>s</div><div class="small">4000 bytes, zero-initialised</div></div></div></div></div>
+<div class="caption">Copying the vector copies the elements into a new allocation. Moving it hands over the three pointers. Its destructor frees the heap block.</div>
+</div>

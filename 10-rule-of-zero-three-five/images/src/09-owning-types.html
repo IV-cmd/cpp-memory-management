@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Which owning type?</div>
+<table class="t"><tr><th>Type</th><th>Owns</th><th>Copy</th><th>Move</th></tr><tr><td><code>std::unique_ptr&lt;T&gt;</code></td><td>one object, exclusively</td><td>not allowed</td><td>transfers</td></tr><tr><td><code>std::unique_ptr&lt;T[]&gt;</code></td><td>a fixed array, exclusively</td><td>not allowed</td><td>transfers</td></tr><tr><td><code>std::vector&lt;T&gt;</code></td><td>a resizable sequence</td><td>deep copy</td><td>transfers</td></tr><tr><td><code>std::string</code></td><td>characters</td><td>deep copy</td><td>transfers</td></tr><tr><td><code>std::shared_ptr&lt;T&gt;</code></td><td>one object, shared</td><td>count +1</td><td>transfers</td></tr></table>
+<div class="caption">For a file buffer I'd use <code>std::vector&lt;std::byte&gt;</code> or <code>std::vector&lt;char&gt;</code>.</div>
+</div>

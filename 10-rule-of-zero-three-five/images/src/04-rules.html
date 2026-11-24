@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Rule of Zero, Three, Five</div>
+<table class="t"><tr><th>Rule</th><th>When it applies</th><th>What I write</th></tr><tr><td>Rule of Zero</td><td>members are already RAII types</td><td>none of the five</td></tr><tr><td>Rule of Three</td><td>I own a raw resource, copying only</td><td>destructor, copy ctor, copy assignment</td></tr><tr><td>Rule of Five</td><td>I own a raw resource, copy and move</td><td>all five</td></tr><tr><td>(non-copyable owner)</td><td>e.g. a file descriptor</td><td>destructor + two moves, copies <code>= delete</code></td></tr></table>
+
+</div>

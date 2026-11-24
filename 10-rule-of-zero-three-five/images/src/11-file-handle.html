@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>FileHandle</code>: non-copyable, movable</div>
+<table class="t"><tr><th>Operation</th><th>Implementation</th><th>Effect</th></tr><tr><td>construct</td><td><code>open(path, O_RDONLY)</code>, throw on -1</td><td>owns one fd</td></tr><tr><td>copy</td><td><code>= delete</code></td><td><span class="pill">compile error</span></td></tr><tr><td>move construct</td><td><code>std::exchange(other.fd, -1)</code></td><td>new object owns it, source holds -1</td></tr><tr><td>move assign</td><td>close my fd, then exchange</td><td>old fd closed exactly once</td></tr><tr><td>destroy</td><td><code>if (fd &gt;= 0) close(fd);</code></td><td>moved-from handles do nothing</td></tr></table>
+
+</div>
