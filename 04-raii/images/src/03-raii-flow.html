@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">RAII: tie the resource to an object's lifetime</div>
+<div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big">object constructed</div><div class="small">constructor acquires the resource</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">object used</div><div class="small">write data, hold the lock, read the buffer</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell orange" style="flex:1;min-width:0px"><div class="big">scope exits</div><div class="small">normal return, early return or exception</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big">destructor runs</div><div class="small">releases the resource</div></div></div>
+<div class="caption">This works because C++ guarantees destructors for automatic objects run when their scope exits, including during stack unwinding.</div>
+</div>

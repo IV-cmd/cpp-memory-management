@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">RAII isn't only about memory</div>
+<table class="t"><tr><th>Resource</th><th>Acquire</th><th>Release</th><th>RAII type</th></tr><tr><td>heap object</td><td><code>new</code></td><td><code>delete</code></td><td><code>std::unique_ptr</code>, <code>std::shared_ptr</code></td></tr><tr><td>dynamic array</td><td><code>new[]</code></td><td><code>delete[]</code></td><td><code>std::vector</code>, <code>std::unique_ptr&lt;T[]&gt;</code></td></tr><tr><td>file</td><td><code>fopen</code> / <code>open</code></td><td><code>fclose</code> / <code>close</code></td><td><code>std::fstream</code>, your own <code>File</code></td></tr><tr><td>mutex</td><td><code>lock()</code></td><td><code>unlock()</code></td><td><code>std::lock_guard</code>, <code>std::scoped_lock</code></td></tr><tr><td>thread</td><td>start it</td><td><code>join()</code></td><td><code>std::jthread</code></td></tr><tr><td>socket / DB connection</td><td>connect</td><td>close</td><td>a small wrapper class</td></tr></table>
+
+</div>

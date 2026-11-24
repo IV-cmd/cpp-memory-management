@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>raii_file.cpp</code>: an exception, step by step</div>
+<table class="t"><tr><th>Output</th><th>What happened</th></tr><tr><td><code>File opened</code></td><td><code>File file;</code> ran the constructor</td></tr><tr><td><code>Writing data</code></td><td>the function body</td></tr><tr><td></td><td><code>throw std::runtime_error("Write failed")</code></td></tr><tr><td><code>File closed</code></td><td>unwinding destroyed <code>file</code> on the way out</td></tr><tr><td><code>caught: Write failed</code></td><td>the handler in <code>main</code> runs after the cleanup</td></tr></table>
+<div class="caption">The destructor ran before the <code>catch</code> block. Nobody called it explicitly.</div>
+</div>

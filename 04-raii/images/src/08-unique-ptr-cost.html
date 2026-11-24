@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">What does <code>unique_ptr</code> cost?</div>
+<table class="t"><tr><th></th><th><code>int*</code></th><th><code>std::unique_ptr&lt;int&gt;</code></th></tr><tr><td><code>sizeof</code> (my run)</td><td>8</td><td>8</td></tr><tr><td>frees itself</td><td>no</td><td>yes</td></tr><tr><td>copyable</td><td>yes (two owners by accident)</td><td>no, move-only</td></tr><tr><td>extra runtime work</td><td>none</td><td>a <code>delete</code> in its destructor, which you'd write anyway</td></tr></table>
+<div class="caption">With the default deleter it's the same size as a raw pointer. Exclusive ownership is expressed in the type, not in comments.</div>
+</div>

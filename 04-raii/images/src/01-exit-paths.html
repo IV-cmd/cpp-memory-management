@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>writeFileManual()</code> has three ways out, cleanup is on one</div>
+<div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>int fd = openFile();</code></div><div class="small">resource acquired</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell red" style="flex:1;min-width:0px"><div class="big"><code>if (someError) return;</code></div><div class="small">fd leaked</div></div><div class="cell red" style="flex:1;min-width:0px"><div class="big"><code>throw runtime_error</code></div><div class="small">fd leaked</div></div><div class="cell green" style="flex:1;min-width:0px"><div class="big"><code>closeFile(fd);</code></div><div class="small">fd closed</div></div></div>
+<div class="caption">Every new <code>return</code> or anything that can throw adds another path that has to remember the cleanup.</div>
+</div>
