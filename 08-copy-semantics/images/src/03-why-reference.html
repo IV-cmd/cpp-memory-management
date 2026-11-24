@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Why the parameter can't be by value</div>
+<div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>FileBuffer b = a;</code></div><div class="small">needs the copy constructor</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell orange" style="flex:1;min-width:0px"><div class="big"><code>FileBuffer(FileBuffer other)</code></div><div class="small">to pass <code>a</code> by value, first copy it into <code>other</code></div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell red" style="flex:1;min-width:0px"><div class="big">copying into <code>other</code></div><div class="small">needs the copy constructor... which needs a copy... </div></div></div>
+<div class="caption">The chain never ends, so the language forbids it. GCC rejects it outright (error in section 8.2).</div>
+</div>

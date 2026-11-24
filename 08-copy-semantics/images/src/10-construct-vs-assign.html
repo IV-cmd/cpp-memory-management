@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Copy construction vs copy assignment</div>
+<table class="t"><tr><th></th><th>Copy constructor</th><th>Copy assignment</th></tr><tr><td>example</td><td><code>FileBuffer second = first;</code></td><td><code>second = first;</code></td></tr><tr><td>left-hand object</td><td>being created</td><td>already exists</td></tr><tr><td>old resource to release?</td><td>no</td><td>yes, its current array</td></tr><tr><td>self-copy possible?</td><td>no</td><td>yes: <code>x = x;</code></td></tr><tr><td>returns</td><td>nothing</td><td><code>FileBuffer&amp;</code> (<code>*this</code>)</td></tr></table>
+
+</div>

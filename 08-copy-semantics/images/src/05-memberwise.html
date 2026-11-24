@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">What the compiler-generated copy does</div>
+<table class="t"><tr><th>Member</th><th>Copied as</th><th>Result</th></tr><tr><td><code>int size</code></td><td>the value</td><td><span class="pill ok">independent</span></td></tr><tr><td><code>double checksum</code></td><td>the value</td><td><span class="pill ok">independent</span></td></tr><tr><td><code>int* data</code></td><td>the address, not the array</td><td><span class="pill">shared allocation</span></td></tr></table>
+<div class="caption">Memberwise copying is right for values. For a pointer it copies where the data lives, not the data.</div>
+</div>

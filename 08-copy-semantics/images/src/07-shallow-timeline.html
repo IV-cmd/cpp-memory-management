@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">End of <code>main</code>, shallow copy</div>
+<table class="t"><tr><th>Step</th><th>What happens</th><th>Heap</th></tr><tr><td>1</td><td><code>second</code> destroyed first (reverse order of construction)</td><td><code>delete[] data</code> frees the array</td></tr><tr><td>2</td><td><code>first</code> destroyed</td><td><code>delete[] data</code> on the same address</td></tr><tr><td></td><td></td><td><span class="pill">double free: undefined behaviour</span></td></tr></table>
+
+</div>

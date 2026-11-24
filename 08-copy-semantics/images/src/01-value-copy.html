@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>PlainBuffer second = first;</code></div>
+<div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>first</code></div><div class="small"><code>size = 1000</code></div></div><div class="cell green" style="flex:1;min-width:0px"><div class="big"><code>second</code></div><div class="small"><code>size = 1000</code></div></div></div><div class="arrow">↓</div><table class="t"><tr><th>After</th><th><code>first.size</code></th><th><code>second.size</code></th></tr><tr><td><code>PlainBuffer second = first;</code></td><td>1000</td><td>1000</td></tr><tr><td><code>second.size = 2000;</code></td><td>1000</td><td>2000</td></tr></table>
+<div class="caption">Two independent objects, each with its own <code>size</code>. Changing one doesn't touch the other.</div>
+</div>

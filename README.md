@@ -24,6 +24,9 @@ Phase 2 of my systems engineering notes: stack, heap, RAII, smart pointers, owne
 | 5 | [Ownership and resource management](05-ownership-resource-management/) |
 | 6 | [`std::unique_ptr` and exclusive ownership](06-unique-ptr/) |
 | 7 | [`std::shared_ptr` and `std::weak_ptr`](07-shared-ptr-weak-ptr/) |
+| 8 | [Copy semantics](08-copy-semantics/) |
+| 9 | [Move semantics](09-move-semantics/) |
+| 10 | [Resource design: Rule of Zero, Three and Five](10-rule-of-zero-three-five/) |
 
 ## Diagrams
 

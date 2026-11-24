@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Which function runs? (<code>copy_basics.cpp</code>)</div>
+<table class="t"><tr><th>Statement</th><th>What runs</th><th>Why</th></tr><tr><td><code>FileBuffer b = a;</code></td><td>copy constructor</td><td><code>b</code> is being created</td></tr><tr><td><code>FileBuffer c(a);</code></td><td>copy constructor</td><td>same thing, different spelling</td></tr><tr><td><code>inspect(a);</code></td><td>copy constructor</td><td>by-value parameter is a new object</td></tr><tr><td><code>d = a;</code></td><td>copy assignment</td><td><code>d</code> already exists</td></tr></table>
+<div class="caption">The <code>=</code> sign doesn't decide it. What matters is whether the object on the left is new.</div>
+</div>

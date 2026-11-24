@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Shallow copy</div>
+<div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>first.data</code></div></div><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>second.data</code></div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell red" style="flex:1;min-width:0px"><div class="big">the same <code>int[1000]</code></div><div class="small">one allocation, two objects that think they own it</div></div></div>
+<div class="caption">Both pointers hold the same address. <code>shallow_copy.cpp</code> prints it.</div>
+</div>

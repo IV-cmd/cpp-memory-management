@@ -217,3 +217,5 @@ One more thing to be careful about: `shared_ptr` is often described as thread-sa
 ![What shared_ptr makes thread-safe, and what it doesn't](images/13-threads.png)
 
 Two threads can each copy and destroy their own `shared_ptr` to the same object, and the object is still destroyed exactly once. But if both threads read and write the object itself, they still need a mutex. I'll come back to this in Phase 3.
+
+Next, [Module 8](../08-copy-semantics/) looks at what copying an object does to the resources it owns.

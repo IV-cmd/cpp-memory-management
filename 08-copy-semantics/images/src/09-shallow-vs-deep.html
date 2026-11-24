@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Shallow vs deep copy</div>
+<table class="t"><tr><th></th><th>Shallow</th><th>Deep</th></tr><tr><td>copies</td><td>the pointer</td><td>the pointed-to data</td></tr><tr><td>allocations after copy</td><td>1</td><td>2</td></tr><tr><td>changing <code>second.data[0]</code></td><td>changes <code>first</code> too</td><td><code>first</code> untouched</td></tr><tr><td>destruction</td><td><span class="pill">double free</span></td><td><span class="pill ok">each frees its own</span></td></tr><tr><td>cost</td><td>8 bytes</td><td>the whole buffer</td></tr></table>
+
+</div>
