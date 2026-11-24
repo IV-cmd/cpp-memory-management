@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>static int retryCount</code> vs <code>int calls</code></div>
+<table class="t"><tr><th>Call</th><th><code>retryCount</code> (static)</th><th><code>calls</code> (automatic)</th></tr><tr><td>1st <code>process()</code></td><td>1</td><td>1</td></tr><tr><td>2nd <code>process()</code></td><td>2</td><td>1</td></tr><tr><td>3rd <code>process()</code></td><td>3</td><td>1</td></tr></table>
+<div class="caption">Both names are scoped to the function. Only <code>calls</code> is recreated on each call; <code>retryCount</code> is initialised once and keeps its value for the rest of the program.</div>
+</div>

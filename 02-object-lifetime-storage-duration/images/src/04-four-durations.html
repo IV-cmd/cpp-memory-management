@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">The four storage durations</div>
+<table class="t"><tr><th>Storage duration</th><th>Example</th><th>Starts</th><th>Ends</th></tr><tr><td>Automatic</td><td><code>int x = 10;</code> in a block</td><td>at its declaration</td><td>at the end of the block</td></tr><tr><td>Static</td><td>a global, or <code>static int x;</code></td><td>before <code>main</code> (locals: first time through)</td><td>after <code>main</code> returns</td></tr><tr><td>Dynamic</td><td><code>new int(10)</code></td><td>at the <code>new</code></td><td>at the <code>delete</code> (or never: leak)</td></tr><tr><td>Thread</td><td><code>thread_local int x;</code></td><td>when the thread first uses it</td><td>when the thread exits</td></tr></table>
+
+</div>

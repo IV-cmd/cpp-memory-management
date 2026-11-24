@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>thread_local int requestCount</code>: one copy per thread</div>
+<div class="row" style=""><div class="cell gray" style="flex:1;min-width:0px"><div class="big">main</div><div class="small">requestCount = 0<br><code>0x7f6b463003bc</code></div></div><div class="cell blue" style="flex:1;min-width:0px"><div class="big">thread A</div><div class="small">3 increments → 3<br><code>0x7f6b45bff63c</code></div></div><div class="cell green" style="flex:1;min-width:0px"><div class="big">thread B</div><div class="small">5 increments → 5<br><code>0x7f6b453fe63c</code></div></div></div>
+<div class="caption">Same name, three different objects at three addresses. Nobody needs a lock because nobody shares. Handy for per-worker counters in Phase 3.</div>
+</div>

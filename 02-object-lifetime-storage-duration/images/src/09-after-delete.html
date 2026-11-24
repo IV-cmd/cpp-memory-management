@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">What <code>delete p;</code> changes, and what it doesn't</div>
+<table class="t"><tr><th></th><th>Before <code>delete p</code></th><th>After</th></tr><tr><td>pointer variable <code>p</code></td><td><span class="pill ok">exists</span></td><td><span class="pill ok">exists</span></td></tr><tr><td>value stored in <code>p</code></td><td>address of the int</td><td><b>same</b> address (now dangling)</td></tr><tr><td>the int's lifetime</td><td><span class="pill ok">alive</span></td><td><span class="pill">ended</span></td></tr><tr><td>its storage</td><td>reserved for it</td><td>handed back to the allocator</td></tr><tr><td><code>*p</code></td><td>50</td><td>undefined behaviour</td></tr></table>
+
+</div>

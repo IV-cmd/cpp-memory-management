@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>storage_durations.cpp</code>: when each Tracer is built and destroyed</div>
+<table class="t"><tr><th>Output</th><th>What happened</th></tr><tr><td><code>+ static: global</code></td><td>constructed before <code>main</code> starts</td></tr><tr><td><code>main starts</code></td><td></td></tr><tr><td><code>+ automatic: block local</code><br><code>- automatic: block local</code></td><td>its block opened and closed</td></tr><tr><td><code>+ dynamic: new</code></td><td><code>new</code> ran</td></tr><tr><td><code>...still alive after the line that created it</code></td><td></td></tr><tr><td><code>- dynamic: new</code></td><td><code>delete</code> ran, not a closing brace</td></tr><tr><td><code>main ends</code></td><td></td></tr><tr><td><code>- static: global</code></td><td>destroyed after <code>main</code> returns</td></tr></table>
+
+</div>

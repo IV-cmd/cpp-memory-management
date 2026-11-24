@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Reading the AddressSanitizer report for <code>dangling.cpp</code></div>
+<table class="t"><tr><th>Report line</th><th>Meaning</th></tr><tr><td><code>heap-use-after-free on address 0x502000000010</code></td><td>the bug class and the address touched</td></tr><tr><td><code>READ of size 4 … #0 main dangling.cpp:9</code></td><td>where: reading an int on line 9</td></tr><tr><td><code>freed by thread T0 here: … dangling.cpp:7</code></td><td>the <code>delete p;</code></td></tr><tr><td><code>previously allocated … dangling.cpp:5</code></td><td>the <code>new int(50)</code></td></tr></table>
+<div class="caption">Three stack traces: the bad access, the free, the allocation. That is usually enough to find the bug without a debugger.</div>
+</div>

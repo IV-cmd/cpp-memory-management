@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Scope is nested blocks of source code</div>
+<div class="box" style="text-align:left"><code>void processRequest() {</code><div style="margin:8px 0 8px 18px"><div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>requestId</code></div><div class="small">visible in the whole function</div></div></div><div class="box" style="text-align:left;margin-top:8px"><code>if (requestId &gt; 0) {</code><div style="margin:8px 0 8px 18px"><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big"><code>retryCount</code></div><div class="small">visible only inside the if</div></div></div></div><code>}</code></div><div style="margin-top:8px"><div class="row" style=""><div class="cell red" style="flex:1;min-width:0px"><div class="big"><code>std::cout &lt;&lt; retryCount;</code></div><div class="small">error: ‘retryCount’ was not declared in this scope</div></div></div></div></div><code>}</code></div>
+
+</div>

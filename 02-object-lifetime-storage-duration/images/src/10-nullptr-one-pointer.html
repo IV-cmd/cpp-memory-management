@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>p = nullptr;</code> only fixes <code>p</code></div>
+<div style="display:flex;align-items:center;gap:16px"><div style="flex:1"><div><div class="row" style=""><div class="cell gray" style="flex:1;min-width:0px"><div class="big"><code>p</code></div><div class="small">nullptr</div></div></div><div style="height:10px"></div><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>copy</code></div><div class="small"><code>0x502000000010</code></div></div></div></div></div><div style="font-size:30px;color:#7c3aed">→</div><div style="flex:1"><div class="row" style=""><div class="cell red" style="flex:1;min-width:0px"><div class="big">freed</div><div class="small">the int's old storage</div></div></div></div></div>
+<div class="caption"><code>dangling.cpp</code> clears <code>p</code> and reads through <code>copy</code>. AddressSanitizer: <code>heap-use-after-free … READ of size 4 … dangling.cpp:9</code>.</div>
+</div>
