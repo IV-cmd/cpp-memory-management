@@ -21,6 +21,8 @@ Phase 2 of my systems engineering notes: stack, heap, RAII, smart pointers, owne
 | 2 | [Object lifetime and storage duration](02-object-lifetime-storage-duration/) |
 | 3 | [Dynamic memory allocation](03-dynamic-memory-allocation/) |
 | 4 | [RAII](04-raii/) |
+| 5 | [Ownership and resource management](05-ownership-resource-management/) |
+| 6 | [`std::unique_ptr` and exclusive ownership](06-unique-ptr/) |
 
 ## Diagrams
 

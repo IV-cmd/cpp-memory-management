@@ -256,4 +256,4 @@ In `handleRequest()`, `requestId` and the pointer `buffer` are both automatic, s
 
 ---
 
-Next: Module 5, smart pointers and ownership.
+Next: [Module 5](../05-ownership-resource-management/), ownership and resource management.

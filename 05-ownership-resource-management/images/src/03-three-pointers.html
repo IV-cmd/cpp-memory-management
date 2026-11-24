@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Three pointers, one allocation</div>
+<div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>buffer</code></div></div></div><div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>checksumBuffer</code></div></div></div><div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>writerBuffer</code></div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">One dynamically allocated array</div><div class="small"><code>new int[1000]</code></div></div></div>
+<div class="caption">All three are <code>int*</code> holding the same address. Nothing in the type says which one (if any) is responsible for <code>delete[]</code>.</div>
+</div>

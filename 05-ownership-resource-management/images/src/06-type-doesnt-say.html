@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">The compiler only sees <code>int*</code></div>
+<table class="t"><tr><th>Declaration</th><th>Owner or borrower?</th><th>Who knows?</th></tr><tr><td><code>int* buffer = new int[1000];</code></td><td>owner</td><td>only a convention</td></tr><tr><td><code>void calculateChecksum(const int* data, size_t n)</code></td><td>borrower</td><td>only a convention</td></tr><tr><td><code>void writeToDisk(std::span&lt;const int&gt; data)</code></td><td>borrower</td><td>the type: a span never owns</td></tr><tr><td><code>std::unique_ptr&lt;int[]&gt; buffer</code> (Module 6)</td><td>owner</td><td>the type: it frees itself</td></tr></table>
+<div class="caption">The goal of Modules 6 and 7 is moving ownership out of comments and into types.</div>
+</div>

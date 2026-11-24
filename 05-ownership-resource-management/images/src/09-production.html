@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">What bad ownership looks like in a long-running server</div>
+<table class="t"><tr><th>Bug</th><th>Cause</th><th>How it shows up</th></tr><tr><td>memory leak</td><td>nobody owns it</td><td>resident memory creeps up for weeks (Module 3 measured this)</td></tr><tr><td>double free</td><td>two owners</td><td>glibc aborts the process: <code>free(): double free detected</code></td></tr><tr><td>use-after-free</td><td>owner freed it while someone still borrowed it</td><td>wrong data, or a crash far away from the bug</td></tr><tr><td>data race on cleanup</td><td>two threads decide they're the owner</td><td>rare, timing-dependent crashes (Phase 3)</td></tr></table>
+
+</div>

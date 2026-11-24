@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Three ownership models</div>
+<table class="t"><tr><th>Model</th><th>Meaning</th><th>Typical C++ representation</th></tr><tr><td>Exclusive ownership</td><td>exactly one owner</td><td><code>std::unique_ptr</code></td></tr><tr><td>Shared ownership</td><td>several owners share lifetime responsibility</td><td><code>std::shared_ptr</code></td></tr><tr><td>Non-owning access</td><td>can use it, doesn't control its lifetime</td><td>reference, raw pointer, <code>std::span</code>; sometimes <code>std::weak_ptr</code></td></tr></table>
+<div class="caption">Not every pointer should own the object it points to.</div>
+</div>

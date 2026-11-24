@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Access and ownership are different things</div>
+<table class="t"><tr><th></th><th>Access</th><th>Ownership</th></tr><tr><td>means</td><td>can read or write the object</td><td>responsible for ending its lifetime</td></tr><tr><td>how many can have it</td><td>any number</td><td>one (or a shared group, Module 7)</td></tr><tr><td>in the storage server</td><td>checksum and writer read the buffer</td><td>someone has to <code>delete[]</code> it</td></tr><tr><td>what goes wrong without it</td><td>nothing to clean up</td><td>leak, double free or use-after-free</td></tr></table>
+
+</div>

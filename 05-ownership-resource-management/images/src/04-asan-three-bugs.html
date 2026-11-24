@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>ownership_bugs.cpp</code> under AddressSanitizer</div>
+<table class="t"><tr><th>Run</th><th>Ownership mistake</th><th>AddressSanitizer says</th></tr><tr><td><code>nobody</code></td><td>nobody deletes</td><td><code>SUMMARY: ... 4000 byte(s) leaked in 1 allocation(s)</code></td></tr><tr><td><code>everyone</code></td><td>handler and writer both delete</td><td><code>SUMMARY: ... double-free</code></td></tr><tr><td><code>early</code></td><td>writer deletes, checksum reads afterwards</td><td><code>SUMMARY: ... heap-use-after-free</code></td></tr></table>
+<div class="caption">Same program, same three pointers. The only difference is which function believed it owned the buffer.</div>
+</div>

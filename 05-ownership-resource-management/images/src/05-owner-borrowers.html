@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>processFile()</code> owns, the others borrow</div>
+<div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>processFile()</code></div><div class="small">owner: allocates and <code>delete[]</code>s</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big"><code>buffer</code></div><div class="small"><code>new int[1000]</code></div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>calculateChecksum()</code></div><div class="small">borrows, reads, returns</div></div><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>writeToDisk()</code></div><div class="small">borrows, reads, returns</div></div></div>
+<div class="caption">Borrowers must not keep the pointer after they return, and must never delete it. <code>borrow.cpp</code> runs clean under AddressSanitizer.</div>
+</div>

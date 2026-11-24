@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Ownership transfer</div>
+<div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>RequestHandler</code></div><div class="small">owns the buffer</div></div></div><div class="arrow">↓ hands it over</div><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>StorageWriter</code></div><div class="small">now owns the buffer</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">SSD write</div><div class="small">then the writer frees it</div></div></div>
+<div class="caption">After the hand-off the handler must not touch or free the buffer. With raw pointers that's a rule you remember; with <code>std::unique_ptr</code> and <code>std::move</code> it's enforced (Module 6).</div>
+</div>
