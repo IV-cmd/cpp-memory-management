@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Does moving help here?</div>
+<table class="t"><tr><th>Type</th><th>What a move does</th><th>Faster than a copy?</th></tr><tr><td><code>int</code></td><td>copies 4 bytes</td><td><span class="pill">no difference</span></td></tr><tr><td><code>std::vector&lt;int&gt;</code> (10M ints)</td><td>hands over 3 pointers</td><td><span class="pill ok">yes: 0 us vs ~22 ms</span></td></tr><tr><td><code>std::string</code> (long)</td><td>hands over the heap buffer</td><td><span class="pill ok">yes</span></td></tr><tr><td><code>std::string</code> (short, fits inline)</td><td>copies the inline characters</td><td><span class="pill warn">about the same</span></td></tr><tr><td>my <code>FileBuffer</code></td><td>copies pointer + size, nulls the source</td><td><span class="pill ok">yes</span></td></tr></table>
+<div class="caption">Moving pays off when the object owns something on the heap. Short strings live inside the string object itself (the small-string optimisation), so there's nothing to hand over.</div>
+</div>

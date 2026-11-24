@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>FileBuffer second = std::move(first);</code></div>
+<table class="t"><tr><th>#</th><th>Event</th><th>Allocations alive</th></tr><tr><td>1</td><td><code>first</code> allocates 1000 ints</td><td>1</td></tr><tr><td>2</td><td><code>std::move(first)</code> selects the move constructor</td><td>1</td></tr><tr><td>3</td><td><code>second</code> takes the address, <code>first.data = nullptr</code></td><td>1</td></tr><tr><td>4</td><td><code>second</code> destroyed: <code>delete[]</code> the array</td><td>0</td></tr><tr><td>5</td><td><code>first</code> destroyed: <code>delete[] nullptr</code> does nothing</td><td>0</td></tr></table>
+<div class="caption">One allocation, one <code>delete[]</code> that frees it.</div>
+</div>

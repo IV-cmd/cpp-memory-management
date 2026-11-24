@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Handing a 2 GB buffer to another component</div>
+<table class="t"><tr><th></th><th>Copy</th><th>Move</th></tr><tr><td>new allocation</td><td>2 GB</td><td>none</td></tr><tr><td>bytes copied</td><td>2 GB of data</td><td>the pointer and the size</td></tr><tr><td>peak memory</td><td>4 GB</td><td>2 GB</td></tr><tr><td>source afterwards</td><td>still has its own 2 GB</td><td>empty</td></tr></table>
+<div class="caption">If the source doesn't need the data any more, copying it is pure waste.</div>
+</div>

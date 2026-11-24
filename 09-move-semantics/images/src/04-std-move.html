@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title"><code>std::move</code> doesn't move</div>
+<div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big"><code>std::move(name)</code></div><div class="small">is a cast: <code>static_cast&lt;std::string&amp;&amp;&gt;(name)</code></div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big">overload resolution</div><div class="small">now picks the <code>&amp;&amp;</code> overload or the move constructor</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">the move constructor</div><div class="small">is what actually takes the resource</div></div></div>
+<div class="caption">If nothing takes the rvalue, nothing happens: <code>rvalue_refs.cpp</code> prints <code>name</code> unchanged after <code>std::move(name)</code>.</div>
+</div>

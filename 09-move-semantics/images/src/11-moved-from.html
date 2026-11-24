@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">What's left in the source after a move</div>
+<table class="t"><tr><th>Type</th><th>Moved-from state</th></tr><tr><td>my <code>FileBuffer</code></td><td><code>data == nullptr</code>, <code>size == 0</code>: I decided that</td></tr><tr><td><code>std::unique_ptr</code></td><td>guaranteed <code>nullptr</code></td></tr><tr><td><code>std::vector</code>, <code>std::string</code></td><td>"valid but unspecified": usually empty, but only assign to it or destroy it</td></tr><tr><td><code>int</code>, <code>double</code></td><td>unchanged: a move is just a copy</td></tr></table>
+<div class="caption">A moved-from object is still alive and will still be destroyed. It just shouldn't be read unless the type promises what's in it.</div>
+</div>

@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Copy vs move</div>
+<div class="label">copy</div><div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big"><code>first</code></div><div class="small">array A</div></div><div class="cell green" style="flex:1;min-width:0px"><div class="big"><code>second</code></div><div class="small">array B (contents copied)</div></div></div><div style="height:14px"></div><div class="label">move</div><div class="row" style=""><div class="cell gray" style="flex:1;min-width:0px"><div class="big"><code>first</code></div><div class="small">empty, still a valid object</div></div><div class="cell green" style="flex:1;min-width:0px"><div class="big"><code>second</code></div><div class="small">owner</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">the original allocation</div><div class="small">no second array</div></div></div>
+<div class="caption">A move copies the address and leaves the source empty. The data never moves.</div>
+</div>

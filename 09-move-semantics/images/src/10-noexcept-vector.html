@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">17 <code>push_back</code>s, no <code>reserve</code> (<code>noexcept_vector.cpp</code>)</div>
+<table class="t"><tr><th>Element type</th><th>Move constructor</th><th>Copies during growth</th><th>Moves during growth</th></tr><tr><td><code>Safe</code></td><td><code>noexcept</code></td><td>0</td><td><span class="pill ok">31</span></td></tr><tr><td><code>Risky</code></td><td>may throw</td><td><span class="pill">31</span></td><td>0</td></tr></table>
+<div class="caption">The vector reallocates at sizes 1, 2, 4, 8 and 16, relocating 1 + 2 + 4 + 8 + 16 = 31 elements. If a move could throw halfway through, the old elements would already be gutted, so the vector copies instead. Both types also had 17 moves for the <code>push_back(T{})</code> temporaries themselves.</div>
+</div>

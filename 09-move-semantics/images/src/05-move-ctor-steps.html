@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Inside <code>FileBuffer(FileBuffer&amp;&amp; other) noexcept</code></div>
+<table class="t"><tr><th>Step</th><th><code>other.data</code></th><th><code>other.size</code></th><th><code>this-&gt;data</code></th><th><code>this-&gt;size</code></th></tr><tr><td>before</td><td><code>0x...a0</code></td><td>1000</td><td>?</td><td>?</td></tr><tr><td><code>data = other.data;</code></td><td><code>0x...a0</code></td><td>1000</td><td><code>0x...a0</code></td><td>?</td></tr><tr><td><code>size = other.size;</code></td><td><code>0x...a0</code></td><td>1000</td><td><code>0x...a0</code></td><td>1000</td></tr><tr><td><code>other.data = nullptr; other.size = 0;</code></td><td><code>nullptr</code></td><td>0</td><td><code>0x...a0</code></td><td>1000</td></tr></table>
+<div class="caption">The last step is the important one. Without it, both destructors would delete the same array, which is the shallow-copy bug from Module 8.</div>
+</div>

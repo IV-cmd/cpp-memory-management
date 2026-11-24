@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">What binds to what (<code>rvalue_refs.cpp</code>)</div>
+<table class="t"><tr><th>Expression</th><th>Category</th><th><code>int&amp;</code></th><th><code>int&amp;&amp;</code></th></tr><tr><td><code>x</code></td><td>lvalue (has a name)</td><td><span class="pill ok">binds</span></td><td><span class="pill">error</span></td></tr><tr><td><code>10</code></td><td>prvalue (temporary)</td><td><span class="pill">error</span></td><td><span class="pill ok">binds</span></td></tr><tr><td><code>std::move(x)</code></td><td>xvalue (an rvalue)</td><td><span class="pill">error</span></td><td><span class="pill ok">binds</span></td></tr></table>
+<div class="caption">The two errors are real GCC errors, shown in section 9.3. <code>const int&amp;</code> binds to all three, which is why the copy constructor takes <code>const FileBuffer&amp;</code>.</div>
+</div>
