@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Raw <code>new</code>/<code>delete</code> vs <code>std::make_unique</code></div>
+<table class="t"><tr><th></th><th><code>int* v = new int(100);</code></th><th><code>auto v = std::make_unique&lt;int&gt;(100);</code></th></tr><tr><td>Who frees it</td><td>you, on every path</td><td>the <code>unique_ptr</code> destructor</td></tr><tr><td>Early return / exception</td><td>leaks</td><td><span class="pill ok">freed</span></td></tr><tr><td>Forgetting to free</td><td>leak</td><td>not possible</td></tr><tr><td>Freeing twice</td><td>possible</td><td>not possible</td></tr><tr><td>Size</td><td>8 bytes</td><td>8 bytes</td></tr></table>
+<div class="caption">Module 4 explains why the right-hand column works.</div>
+</div>

@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Use-after-free in <code>use_after_free.cpp</code></div>
+<table class="t"><tr><th>Step</th><th>Code</th><th>Address <code>buffer</code> holds</th><th>What's there</th></tr><tr><td>1</td><td><code>buffer = new int(100);</code></td><td><code>0x5c55dacd1eb0</code></td><td>100</td></tr><tr><td>2</td><td><code>delete buffer;</code></td><td><code>0x5c55dacd1eb0</code></td><td>freed</td></tr><tr><td>3</td><td><code>other = new int(7);</code></td><td><code>0x5c55dacd1eb0</code></td><td>7 (belongs to <code>other</code>)</td></tr><tr><td>4</td><td><code>*buffer</code></td><td><code>0x5c55dacd1eb0</code></td><td><span class="pill">prints 7</span></td></tr></table>
+<div class="caption">The allocator handed the freed spot straight to the next request. Reading through the stale pointer silently read someone else's object.</div>
+</div>

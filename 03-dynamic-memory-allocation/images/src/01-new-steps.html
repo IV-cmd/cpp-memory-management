@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">What <code>int* buffer = new int(100);</code> does</div>
+<div class="row" style=""><div class="cell blue" style="flex:1;min-width:0px"><div class="big">1. allocate</div><div class="small"><code>operator new</code> finds 4 bytes</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">2. construct</div><div class="small">an <code>int</code> object starts living there</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big">3. initialise</div><div class="small">its value is set to 100</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell purple" style="flex:1;min-width:0px"><div class="big">4. return the address</div><div class="small"><code>buffer</code> stores it</div></div></div>
+<div class="caption"><code>delete buffer;</code> runs the same steps backwards: destroy the object, then give the storage back.</div>
+</div>

@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Every <code>new</code> has exactly one matching release</div>
+<table class="t"><tr><th>Allocation</th><th>Release with</th><th>Wrong form</th></tr><tr><td><code>new int(100)</code></td><td><code>delete p;</code></td><td><code>delete[] p;</code> → undefined behaviour</td></tr><tr><td><code>new int[5]</code></td><td><code>delete[] p;</code></td><td><code>delete p;</code> → undefined behaviour</td></tr><tr><td><code>std::malloc(n)</code></td><td><code>std::free(p);</code></td><td><code>delete</code> → undefined behaviour</td></tr></table>
+<div class="caption">With <code>-DMISMATCH</code>, AddressSanitizer reports <code>alloc-dealloc-mismatch (operator new [] vs operator delete)</code>.</div>
+</div>

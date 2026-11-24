@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Why deleting twice is a problem</div>
+<div class="row" style=""><div class="cell green" style="flex:1;min-width:0px"><div class="big"><code>delete buffer;</code></div><div class="small">storage goes back on the allocator's free list</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell red" style="flex:1;min-width:0px"><div class="big"><code>delete buffer;</code> again</div><div class="small">the same block would go on the list twice</div></div></div><div class="arrow">↓</div><div class="row" style=""><div class="cell red" style="flex:1;min-width:0px"><div class="big">two later <code>new</code>s</div><div class="small">could both get the same memory</div></div></div>
+<div class="caption">glibc noticed and aborted (<code>Aborted (core dumped)</code>, status 134). If something else had reused the block in between, the second <code>delete</code> would have freed another object instead.</div>
+</div>

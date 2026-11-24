@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">A surprise: at <code>-O1</code> the leak disappeared</div>
+<table class="t"><tr><th>Build of leak.cpp</th><th>RSS after 1,000 requests</th><th>LeakSanitizer</th></tr><tr><td><code>-g -fsanitize=address</code> (-O0)</td><td>56,504 KiB</td><td>40,000,000 bytes leaked</td></tr><tr><td><code>-g -O1 -fsanitize=address</code></td><td>6,464 KiB</td><td>nothing to report</td></tr></table>
+<div class="caption">The buffer is written but never read, so the optimiser removed the <code>new</code> and the <code>memset</code> entirely. C++14 allows the compiler to skip allocations like this. Real code that uses its buffers still leaks.</div>
+</div>

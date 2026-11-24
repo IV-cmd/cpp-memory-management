@@ -1,0 +1,5 @@
+<div class="card ">
+<div class="title">Same bugs, plain build vs AddressSanitizer</div>
+<table class="t"><tr><th>Bug</th><th>Plain build</th><th><code>-fsanitize=address</code></th></tr><tr><td>leak</td><td>runs fine, memory grows</td><td><span class="pill warn">LeakSanitizer at exit</span></td></tr><tr><td>use-after-free</td><td>prints 7, exit 0</td><td><span class="pill">heap-use-after-free</span></td></tr><tr><td>double delete</td><td><code>free(): double free detected in tcache 2</code>, exit 134</td><td><span class="pill">attempting double-free</span></td></tr><tr><td><code>new[]</code> + <code>delete</code></td><td>runs, no message</td><td><span class="pill">alloc-dealloc-mismatch</span></td></tr></table>
+<div class="caption">Only the double delete is caught without a sanitizer, and only because glibc happens to check that case. Undefined behaviour gives no promise of a crash.</div>
+</div>
